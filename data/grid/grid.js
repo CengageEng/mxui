@@ -48,6 +48,7 @@ $.Controller.extend("Mxui.Data.Grid",{
 		params: new Mxui.Data,
 		row : null,
 		model : null,
+		items: [],
 		noItems : "No Items",
 		// if true, can sort by multiple columns at a time
 		multiSort: true,
@@ -109,8 +110,11 @@ $.Controller.extend("Mxui.Data.Grid",{
 		ths.eq(-1).addClass('ui-corner-right')
 
 		
-		if(this.options.loadImmediate){
+		if(this.options.loadImmediate && !this.options.items.length) {
 			this.options.model.findAll(this.options.params.attrs(), this.callback('list', true))
+		}
+		else if(this.options.items.length) {
+			this.list(true, this.options.items);
 		}
 		
 	},
