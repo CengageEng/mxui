@@ -119,4 +119,12 @@ body .grid {
 	cursor: e-resize;
 	z-index: 9999;
 }
-.innerBody tr:nth-child(odd), .scrollBody tr:nth-child(odd) {background: #DEF}
+.innerBody tr:nth-child(odd), 
+.scrollBody tr:nth-child(odd) {
+	background: #DEF;
+}
+
+.scrollBody tr:nth-child(odd):hover, 
+.scrollBody tr:hover {
+	background: #ddd;
+}
