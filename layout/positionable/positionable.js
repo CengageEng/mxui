@@ -154,13 +154,13 @@ $.fn.position = function( options ) {
 		var elem = $( this ),
 			elemWidth = elem.outerWidth(),
 			elemHeight = elem.outerHeight(),
-			marginLeft = parseInt( $.curCSS( this, "marginLeft", true ) ) || 0,
-			marginTop = parseInt( $.curCSS( this, "marginTop", true ) ) || 0,
+			marginLeft = parseInt( $.css( this, "marginLeft", true ) ) || 0,
+			marginTop = parseInt( $.css( this, "marginTop", true ) ) || 0,
 			scrollInfo = $.position.getScrollInfo( within ),
 			collisionWidth = elemWidth + marginLeft +
-				( parseInt( $.curCSS( this, "marginRight", true ) ) || 0 ) + scrollInfo.width,
+				( parseInt( $.css( this, "marginRight", true ) ) || 0 ) + scrollInfo.width,
 			collisionHeight = elemHeight + marginTop +
-				( parseInt( $.curCSS( this, "marginBottom", true ) ) || 0 ) + scrollInfo.height,
+				( parseInt( $.css( this, "marginBottom", true ) ) || 0 ) + scrollInfo.height,
 			position = $.extend( {}, basePosition ),
 			myOffset = [
 				parseInt( offsets.my[ 0 ], 10 ) *
@@ -741,8 +741,8 @@ if ( $.uiBackCompat !== false ) {
 				if ( $.ui.position[ collision[i] ] ) {
 					var isEvent = ((options.of && options.of.preventDefault) != null),
 						within = $(isEvent || !options.of ? window : options.of),
-						marginLeft = parseInt( $.curCSS( elem[0], "marginLeft", true ) ) || 0,
-						marginTop = parseInt( $.curCSS( elem[0], "marginTop", true ) ) || 0;
+						marginLeft = parseInt( $.css( elem[0], "marginLeft", true ) ) || 0,
+						marginTop = parseInt( $.css( elem[0], "marginTop", true ) ) || 0;
 						
 					var scrollInfo = getScrollInfo(within);
 						
@@ -752,13 +752,13 @@ if ( $.uiBackCompat !== false ) {
 						elem: elem,
 						within : within,
 						collisionPosition : {
-							marginLeft: parseInt( $.curCSS( elem[0], "marginLeft", true ) ) || 0,
-							marginTop: parseInt( $.curCSS( elem[0], "marginTop", true ) ) || 0
+							marginLeft: parseInt( $.css( elem[0], "marginLeft", true ) ) || 0,
+							marginTop: parseInt( $.css( elem[0], "marginTop", true ) ) || 0
 						},
 						collisionWidth: elemWidth + marginLeft +
-							( parseInt( $.curCSS( elem[0], "marginRight", true ) ) || 0 ) + scrollInfo.width,
+							( parseInt( $.css( elem[0], "marginRight", true ) ) || 0 ) + scrollInfo.width,
 						collisionHeight: elemHeight + marginTop +
-							( parseInt( $.curCSS( elem[0], "marginBottom", true ) ) || 0 ) + scrollInfo.height,
+							( parseInt( $.css( elem[0], "marginBottom", true ) ) || 0 ) + scrollInfo.height,
 						elemWidth: elemWidth,
 						elemHeight: elemHeight,
 						offset: offset,
