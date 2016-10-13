@@ -1,14 +1,14 @@
-steal('jquery/controller').then(function($){
+define(['jquery/jquery', 'jquery/controller/controller'], function($){
 
-/*
- * jQuery UI Position 1.9m6
- *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
- *
- * http://docs.jquery.com/UI/Position
- */
+	/*
+     * jQuery UI Position 1.9m6
+     *
+     * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+     * Dual licensed under the MIT or GPL Version 2 licenses.
+     * http://jquery.org/license
+     *
+     * http://docs.jquery.com/UI/Position
+     */
 (function( $, undefined ) {
 
 $.ui = $.ui || {};
